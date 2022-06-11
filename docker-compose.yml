@@ -14,12 +14,14 @@ services:
     build:
       dockerfile: Dockerfile
       context: ./nginx
+    image: "${TCH2_REGISTRY_ADDR}/${TCH2_REGISTRY_USER}/${TCH2_IMAGE_NGINX}"
     ports:
       - '3050:80'
   api:
     build:
       dockerfile: Dockerfile
       context: ./server
+    image: "${TCH2_REGISTRY_ADDR}/${TCH2_REGISTRY_USER}/${TCH2_IMAGE_API}"
     volumes:
       - /app/node_modules
       - ./server:/app
@@ -36,6 +38,7 @@ services:
     build:
       dockerfile: Dockerfile
       context: ./client
+    image: "${TCH2_REGISTRY_ADDR}/${TCH2_REGISTRY_USER}/${TCH2_IMAGE_CLIENT}"
     volumes:
       - /app/node_modules
       - ./client:/app
@@ -43,6 +46,7 @@ services:
     build:
       dockerfile: Dockerfile
       context: ./worker
+    image: "${TCH2_REGISTRY_ADDR}/${TCH2_REGISTRY_USER}/${TCH2_IMAGE_WORKER}"
     volumes:
       - /app/node_modules
       - ./worker:/app
