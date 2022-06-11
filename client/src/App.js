@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Documentation from './Documentation';
-import Fib from './Fib';
+import Geom from './Geom';
 
 function App() {
   const author = process.env.REACT_APP_PROJECT_AUTHOR;
@@ -19,11 +19,11 @@ function App() {
               <p>Autor: {author}</p>
             ) : (null)
           }
-          <Link to="/fib">Fib Calc</Link>
+          <Link to="/geom">GS Calc</Link>
           <Link to="/documentation">Documentation</Link>
         </header>
         <div>
-          <Route path="/fib" component={Fib} />
+          <Route path="/geom" component={Geom} />
           <Route path="/documentation" component={Documentation} />
         </div>
       </div>
