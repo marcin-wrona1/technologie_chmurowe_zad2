@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "dotenv": "^16.0.1",
     "nodemon": "1.18.3",
     "redis": "2.8.0"
   },
