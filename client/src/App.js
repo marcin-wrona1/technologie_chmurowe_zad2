@@ -6,12 +6,19 @@ import Documentation from './Documentation';
 import Fib from './Fib';
 
 function App() {
+  const author = process.env.REACT_APP_PROJECT_AUTHOR;
+
   return (
     <Router>
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          Przykladowa realizacja zadania nr 2 <br />
+          <p>Realizacja zadania nr2 w ramach laboratorium TCh</p>
+          {
+            author ? (
+              <p>Autor: {author}</p>
+            ) : (null)
+          }
           <Link to="/fib">Fib Calc</Link>
           <Link to="/documentation">Documentation</Link>
         </header>
